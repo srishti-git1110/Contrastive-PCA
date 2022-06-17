@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 from torchvision import datasets, transforms
-from background import 
+from background import get_background_images
 
 def get_foreground_target_and_background_set(IMAGE_PATH):
   train_set = datasets.FashionMNIST(root='./data/FashionMNIST', train=True, download=True, transform=transforms.ToTensor())
@@ -9,7 +9,7 @@ def get_foreground_target_and_background_set(IMAGE_PATH):
   foreground = train_set.data[target_index, :, :][:5000]
   target_labels = train_set.targets[target_index][:5000]
   
-  fish_images = (IMAGE_PATH)
+  fish_images = get_background_images(IMAGE_PATH)
   
   np.random.seed(0) 
 
