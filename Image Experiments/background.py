@@ -3,7 +3,7 @@ import os
 import numpy as np
 from preprocess import transform_image
 
-def get_background_data(IMAGE_PATH):
+def get_background_images(IMAGE_PATH):
         
         fish_images = list()
         for filename in os.listdir(IMAGE_PATH):
